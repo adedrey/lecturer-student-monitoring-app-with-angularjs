@@ -1,0 +1,28 @@
+<app-header></app-header>
+<!-- <div class="container mr-1"> -->
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-action-list>
+      <mat-list-item [routerLink]= "['/admin', 'home']">
+        Dashboard <mat-icon>navigate_next</mat-icon>
+      </mat-list-item>
+      <hr>
+      <mat-list-item [routerLink]="['/admin', 'students']">
+        Students <mat-icon>navigate_next</mat-icon>
+      </mat-list-item>
+      <hr>
+      <mat-list-item [routerLink]="['/admin', 'lecturers']">
+        Lecturers <mat-icon>navigate_next</mat-icon>
+      </mat-list-item>
+      <hr>
+      <mat-list-item [routerLink]="['/admin', 'facilities']">
+        Facilities <mat-icon>navigate_next</mat-icon>
+      </mat-list-item>
+      <hr>
+    </mat-action-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

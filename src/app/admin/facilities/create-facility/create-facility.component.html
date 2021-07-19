@@ -1,0 +1,24 @@
+<main>
+
+  <mat-card>
+    <h4 matLine>Add a new facility</h4>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form [formGroup]="facilityForm" *ngIf="!isLoading" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+        <input [formControlName]="'name'" matInput placeholder="Hall Name" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <input [formControlName]="'location'" matInput placeholder="Hall Location" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <input [formControlName]="'seat_no'" matInput placeholder="Number of seat" type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea [formControlName]="'description'" matInput placeholder="Short Description"></textarea>
+      </mat-form-field>
+      <button class="mr-2" mat-raised-button color="primary">Submit</button>
+    </form>
+  </mat-card>
+
+</main>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <button class="mt-2" mat-raised-button color="primary" [routerLink]="['/admin', 'students', 'create']">
+      Add Student
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8  ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-student-list></app-student-list>
+    </div>
+  </div>
+</div>

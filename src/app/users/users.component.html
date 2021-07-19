@@ -1,0 +1,14 @@
+<app-user-header></app-user-header>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <mat-action-list>
+        <mat-list-item [routerLink]= "['/user', 'dashboard']">
+          Dashboard <mat-icon>navigate_next</mat-icon>
+        </mat-list-item>
+        <hr>
+      </mat-action-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

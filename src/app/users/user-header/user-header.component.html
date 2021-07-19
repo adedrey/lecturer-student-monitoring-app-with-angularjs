@@ -1,0 +1,31 @@
+<mat-toolbar color='primary'>
+  <span>LAPU</span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button *ngIf= "isAuthenticated" [routerLink]="['/user', 'profile']" mat-menu-item>
+          <mat-icon>account_circle</mat-icon>
+          <span>Account</span>
+        </button>
+        <button [routerLink]="['/user', 'login']" *ngIf= "!isAuthenticated" mat-menu-item>
+          <mat-icon>lock_open</mat-icon>
+          <span>Login</span>
+        </button>
+        <button *ngIf= "isAuthenticated" (click) = "onLogout()" mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+        <button [routerLink]="['/signup']" *ngIf = "!isAuthenticated" mat-menu-item>
+          <mat-icon>input</mat-icon>
+          <span>Signup</span>
+        </button>
+      </mat-menu>
+    </li>
+  </ul>
+
+
+</mat-toolbar>

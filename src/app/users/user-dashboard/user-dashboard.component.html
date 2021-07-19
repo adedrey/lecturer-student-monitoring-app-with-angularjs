@@ -1,0 +1,26 @@
+<mat-tab-group>
+    <mat-tab label="Students">
+      <div class="container">
+        <app-user-student></app-user-student>
+      </div>
+    </mat-tab>
+    <mat-tab label="Facilities">
+      <div class="container">
+          <app-user-facility></app-user-facility>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div *ngIf="!isLoading && barChartData.length >= 0">
+    <div style="display: block;">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]= "barChartLegend"
+        [chartType]="barChartType"
+      >
+
+      </canvas>
+    </div>
+  </div>

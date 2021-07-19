@@ -1,0 +1,22 @@
+main {
+  width: 80%;
+  margin: auto;
+  margin-top: 5em;
+}
+mat-card, mat-form-field,
+textarea, mat-slider {
+  width: 100%;
+  /* margin: auto; */
+}
+mat-spinner {
+  margin: auto;
+}
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 5px;
+}

@@ -1,0 +1,17 @@
+.example-container {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: whitesmoke;
+}
+mat-sidenav {
+  width: 22%;
+}
+mat-icon {
+  margin-left: auto;
+}
+mat-meu {
+  min-width: 100%;
+}

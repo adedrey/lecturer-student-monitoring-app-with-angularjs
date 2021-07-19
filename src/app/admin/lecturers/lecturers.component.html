@@ -1,0 +1,21 @@
+<div class="container">
+  <div>
+    <button class="mt-2" mat-raised-button color="primary" [routerLink]="['/admin', 'lecturers', 'create']">
+      Generate new tokens' for staff
+    </button>
+
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <app-generate-token></app-generate-token>
+    </div>
+    <div class="col-lg-6 ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-lecturer-list></app-lecturer-list>
+    </div>
+  </div>
+</div>

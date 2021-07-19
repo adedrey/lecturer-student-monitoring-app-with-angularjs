@@ -1,0 +1,18 @@
+<app-user-header></app-user-header>
+<main>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-card>
+    <form [formGroup]="loginForm" *ngIf="!isLoading" (ngSubmit)="onSubmit()">
+      <h4 matLine>Login</h4>
+
+      <mat-form-field>
+        <input [formControlName]="'email'" matInput placeholder="Company Email Address" type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <input [formControlName]="'password'" type="password" matInput placeholder="Your Password">
+      </mat-form-field>
+      <button class="mr-2" [disabled]="!loginForm.valid" mat-raised-button color="accent">Login</button>
+      <!-- <button type="button" mat-raised-button color="warn">Reset</button> -->
+    </form>
+  </mat-card>
+</main>

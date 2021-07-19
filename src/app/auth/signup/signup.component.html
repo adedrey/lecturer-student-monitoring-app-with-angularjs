@@ -1,0 +1,52 @@
+<app-user-header></app-user-header>
+<div class="row">
+  <div class="col-sm-8 offset-sm-2">
+    <main>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <mat-card>
+        <form [formGroup]="signupForm" *ngIf="!isLoading" (ngSubmit)="onSubmit()">
+          <h4 matLine>Sign Up</h4>
+          <mat-form-field>
+            <input [formControlName]="'name'" matInput placeholder="Full Name" type="text">
+          </mat-form-field>
+          <mat-form-field>
+            <input [formControlName]="'address'" matInput placeholder="Home Address" type="text">
+          </mat-form-field>
+          <mat-form-field>
+            <input [formControlName]="'email'" matInput placeholder="Email Address" type="email">
+          </mat-form-field>
+          <mat-form-field>
+              <input [formControlName]="'token'" matInput placeholder="Registration Token" type="text">
+            </mat-form-field>
+          <mat-form-field>
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="department">
+              <mat-option value="Computer Science">Computer Science</mat-option>
+              <mat-option value="Mathematics">Mathematics</mat-option>
+              <mat-option value="Physics">Physics</mat-option>
+              <mat-option value="Botany">Botany</mat-option>
+              <mat-option value="Microbiology">Microbiology</mat-option>
+              <mat-option value="Zoology">Zoology</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <label id="example-radio-group-label">Pick your current rank</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            formControlName="rank">
+            <mat-radio-button color="primary" class="example-radio-button" *ngFor="let rank of ranks" [value]="rank">
+              {{rank}}
+            </mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field>
+            <span matPrefix>NIG &nbsp;</span>
+            <input type="tel" matInput [formControlName]="'phone_no'" placeholder="Telephone">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input [formControlName]="'password'" type="password" matInput placeholder="Your Password">
+          </mat-form-field>
+          <button class="mr-2" [disabled]="!signupForm.valid" mat-raised-button color="primary">Register</button>
+        </form>
+      </mat-card>
+    </main>
+  </div>
+</div>

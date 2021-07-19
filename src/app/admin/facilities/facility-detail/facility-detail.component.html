@@ -1,0 +1,18 @@
+<section id="info" class="py-3">
+    <div class="container">
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <div class="row" *ngIf="facility && !isLoading">
+        <div class="col-md-12 align-self-center">
+          <h3>{{ facility.name }}</h3>
+          <p class="blockquote text-justify">{{ facility.description }}</p>
+          <p>Location: {{ facility.location }}</p>
+          <button class="ml-2" mat-raised-button color="warn" (click)="onDelete(facility._id)">DELETE</button>
+        </div>
+      </div>
+      <div class="row" *ngIf="!facility && !isLoading">
+        <div class="col-md-12 align-self-center">
+          <h3>Nothing to show</h3>
+        </div>
+      </div>
+    </div>
+  </section>

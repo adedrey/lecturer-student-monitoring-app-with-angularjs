@@ -1,0 +1,28 @@
+<main>
+
+    <mat-card>
+        <h4 matLine>Add Student</h4>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <form [formGroup]="studentForm" *ngIf="!isLoading" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+          <input [formControlName]="'name'" matInput placeholder="Full Name" type="text">
+        </mat-form-field>
+      <mat-form-field>
+        <input [formControlName]="'matric_no'" matInput placeholder="Matric Number" type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Department</mat-label>
+        <select [formControlName]="'department'" matNativeControl>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Microbiology">Microbiology</option>
+          <option value="Physics">Physics</option>
+        </select>
+      </mat-form-field>
+
+      <button class="mr-2" mat-raised-button color="primary">Submit</button>
+    </form>
+    </mat-card>
+
+</main>

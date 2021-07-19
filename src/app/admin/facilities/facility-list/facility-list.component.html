@@ -1,0 +1,40 @@
+<main>
+
+    <div>
+
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <table *ngIf="!isLoading" mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let facility">{{ facility.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="location">
+          <th class="text-center" mat-header-cell *matHeaderCellDef>Location</th>
+          <td class="text-center" mat-cell *matCellDef="let facility">{{ facility.location }}</td>
+        </ng-container>
+        <ng-container matColumnDef="seat_no">
+          <th mat-header-cell *matHeaderCellDef>Seat Number</th>
+          <td mat-cell *matCellDef="let facility">{{ facility.seat_no }}</td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+          <th class="text-center" mat-header-cell *matHeaderCellDef>Action</th>
+          <td class="text-center" mat-cell *matCellDef="let facility">
+              <button mat-button color="primary" [routerLink]="['/admin', 'facilities', facility._id]">More...</button>
+            <button mat-button color="warn" (click)="onDelete(facility._id)">DELETE</button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButton></mat-paginator>
+    </div>
+
+
+
+  </main>

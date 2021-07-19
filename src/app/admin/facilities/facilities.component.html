@@ -1,0 +1,22 @@
+<div class="container">
+    <div>
+        <button
+          class="mt-2"
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/admin', 'facilities', 'create']"
+        >
+        Add facility
+      </button>
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+  <div class="row">
+      <div class="col-sm-10 offset-sm-1">
+          <app-facility-list></app-facility-list>
+        </div>
+  </div>
+</div>

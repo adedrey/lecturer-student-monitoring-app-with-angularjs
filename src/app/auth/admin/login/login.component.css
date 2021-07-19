@@ -1,0 +1,14 @@
+main {
+  width: 80%;
+  margin: auto;
+  margin-top: 5em;
+}
+mat-card, mat-form-field,
+textarea, mat-slider {
+  width: 100%;
+  /* margin: auto; */
+}
+
+mat-spinner {
+  margin: auto;
+}

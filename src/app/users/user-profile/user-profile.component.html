@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-12">
+    <main>
+      <div *ngIf="errorMessage" class="alert alert-info alert-dismissible">
+        <button class="close" type="button" (click)="onClose()">
+          <span>&times;</span>
+        </button>
+        {{errorMessage}}
+      </div>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+      <mat-card>
+        <form [formGroup]="profileForm" *ngIf="!isLoading" (ngSubmit)="onSubmit()">
+          <h4 matLine>Change Settings</h4>
+          <mat-form-field>
+            <input [formControlName]="'name'" matInput placeholder="Full Name" type="text">
+          </mat-form-field>
+          <label id="example-radio-group-label">Present Rank</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            formControlName="rank">
+            <mat-radio-button color="primary" class="example-radio-button" *ngFor="let rank of ranks" [value]="rank">
+              {{rank}}
+            </mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field>
+            <input [formControlName]="'password'" matInput placeholder="Old Password" type="password">
+          </mat-form-field>
+          <mat-form-field>
+            <input [formControlName]="'new_password'" type="password" matInput placeholder="New Password">
+          </mat-form-field>
+          <button class="mr-2" [disabled]="!profileForm.valid" mat-raised-button color="primary">Update</button>
+        </form>
+      </mat-card>
+    </main>
+  </div>
+</div>
